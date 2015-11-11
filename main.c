@@ -1,34 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <string.h>
-#include <unistd.h>
-#include <ctype.h>
-
-// Constants
-#define TRUE  1
-#define FALSE  0
-#define SHOWLOG 1
-
-
-//Structs Declarations
-typedef struct PIXEL {
-        unsigned char R;
-        unsigned char G;
-        unsigned char B;
-} PIXEL;
-
-typedef struct BITMAPFILEHEADER {
-        unsigned short signature;
-        unsigned long sizeOfBMP;
-        unsigned short reserved1;
-        unsigned short reserved2;
-        unsigned long offset;
-} BITMAPFILEHEADER;
-
-// Function Declarations
-void determineFunctions(int scale, int degree, int flip,char *outputFile,char *inputFile);
-void readFileHeader(char *fileName);
+#include "header.h"
 
 int main(int argc, char *argv[]){
         int c;
@@ -138,52 +108,4 @@ int main(int argc, char *argv[]){
         determineFunctions(occurrence[0],occurrence[1],occurrence[2],outputFile,inputFile);
 
         return 0;
-}
-
-void determineFunctions(int scale, int degree, int flip, char *outputFile,char *inputFile){
-        if(SHOWLOG){
-            printf("Inside of Determine Functions\n");
-            printf("Values being passed:\n");
-            printf("Scale: '%d' | Degree: '%d' | Flip: '%d'\nOutputFile: '%s' | InputFile: '%s'\n", scale,degree,flip,outputFile,inputFile);
-        }
-
-        if(inputFile == NULL){
-
-        }else{
-            readFileHeader(inputFile);
-        }
-
-        if(scale) {
-
-        }
-
-        if(degree) {
-
-        }
-
-        if(flip) {
-
-        }
-
-        if(outputFile == NULL){
-
-        }else{
-
-        }
-
-        if(SHOWLOG)
-            printf("Leaving Determine functions\n");
-}
-
-void readFileHeader(char *fileName){
-    char path[254];
-    if(getcwd(path,sizeof(path)) == NULL){
-        fprintf(stderr, "Error with getting path\n");
-        exit(1);
-    }
-    FILE *fp;
-    strcat(path,"/");
-    strcat(path,fileName);
-
-    fp = fopen(path,"rb");
 }
