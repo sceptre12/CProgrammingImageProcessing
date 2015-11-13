@@ -49,8 +49,8 @@ int main(int argc, char *argv[]){
                                 fprintf(stderr, "Please Insert a number\n");
                                 exit(1);
                         }
-                        if((occurrence[1] % 90) != 0) {
-                                fprintf(stderr, "The number must be a multiple of 90\n");
+                        if((occurrence[1] % 90) != 0 || occurrence[1] == 0) {
+                                fprintf(stderr, "The number must be 90 or a multiple of 90\n");
                                 exit(1);
                         }
                         if(SHOWLOG)

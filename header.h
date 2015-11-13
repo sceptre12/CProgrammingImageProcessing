@@ -75,7 +75,7 @@ int writeBits(int fd, int rows, int cols, pixel *image, unsigned int start);
 */
 int flipImage (pixel *original, pixel **newImage, int rows, int cols);
 int rotate (pixel *original, pixel **newImage, int rotation, int rows, int cols);
-int enlarge (pixel *original, int rows, int cols, int scale, pixel **newImage, int *newRows, int *newcols);
+int enlarge(pixel *original, int rows, int cols, int scale, pixel **newImage, int *newRows, int *newcols);
 
 // Determines which operations to run
 void determineFunctions(int scale, int degree, int flip,char *outputFile,char *inputFile);

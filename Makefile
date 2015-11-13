@@ -4,7 +4,7 @@ CFLAG=-Wall -g
 all: build bin
 
 build: main.o determineFunctions.o readFile.o writeFile.o operations.o
-	$(CC) $(CFLAG) -o bmptool main.o determineFunctions.o readFile.o writeFile.o operations.o
+	$(CC) $(CFLAG) -o bmptool main.o readFile.o writeFile.o operations.o determineFunctions.o
 
 main.o: main.c header.h
 	$(CC) $(CFLAG) -c main.c
