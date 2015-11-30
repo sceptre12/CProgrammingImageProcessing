@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
             Determines how many times an options arg is passed
             This also lets me know what options were passed;
          */
-        int occurrence[3] = {0};
+        int occurrence[4] = {0};
         char *outputFile = NULL;
         while((c = getopt(argc,argv,"s:r:fo:")) != -1) {
                 switch(c) {
