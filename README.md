@@ -1,4 +1,4 @@
-# C Programming Image Processing
+# C Programming Image Processing (Programming)
 
 Class Assignment:
 Create a C program that has the ability to do:
